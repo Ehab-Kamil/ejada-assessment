@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: ejada
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ejada
+    username: postgres
+    password: mysecretpassword
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    generate-ddl: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true # Enables SQL query logging
+    format-sql: true # Formats the SQL logs for better readability
+
+# Additional optional configurations
+logging:
+  level:
+    org.springframework: INFO
+    org.hibernate.SQL: DEBUG
+
