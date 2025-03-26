@@ -46,11 +46,15 @@ public class PaymentRoutingEvaluationManagerImpl implements PaymentEvaluationMan
         //load all business rules, it should be cached somewhere
         List<BusinessruleDTO> rules = businessRuleService.getRoutingRulesOrderByPriority();
 
-        BusinessruleDTO rule = rules.stream().filter((rule) -> {
-            return ConditionEvaluatorUtil.applyCondition(rule.getCondition(), payment);
+        if (rules.isEmpty()) {
+            return payment;
+        }
+
+        BusinessruleDTO rule = rules.stream().filter((r) -> {
+            return ConditionEvaluatorUtil.applyCondition(r.getCondition(), payment);
         }).max(Comparator.comparingInt(BusinessruleDTO::getPriority)).get();
 
-        ActionApplyUtil.applyAction(result.getAction(), payment);
+        ActionApplyUtil.applyAction(rule.getAction(), payment);
         payment.getAppliedRules().add(rule);
 
         return payment;

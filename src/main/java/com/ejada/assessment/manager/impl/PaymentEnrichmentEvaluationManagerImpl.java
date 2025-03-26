@@ -45,6 +45,10 @@ public class PaymentEnrichmentEvaluationManagerImpl implements PaymentEvaluation
         //load all business rules, it should be cached somewhere
         List<BusinessruleDTO> rules = businessRuleService.getEnrichmentRulesOrderByPriority();
 
+        if (rules.isEmpty()) {
+            return payment;
+        }
+
         ExecutorService executor = Executors.newFixedThreadPool(rules.size() + 1);
 
         AtomicInteger ruleIndex = new AtomicInteger(1);
@@ -53,7 +57,7 @@ public class PaymentEnrichmentEvaluationManagerImpl implements PaymentEvaluation
             executor.submit(new PaymentRuleMatcherThread(map, ruleIndex.getAndIncrement(), rule, payment));
         });
 
-        Future<PaymentTransactionDTO> future = executor.submit(new PaymentRuleExecutorThread(map, rules.size() , payment));
+        Future<PaymentTransactionDTO> future = executor.submit(new PaymentRuleExecutorThread(map, rules.size(), payment));
 
         try {
             return future.get();
