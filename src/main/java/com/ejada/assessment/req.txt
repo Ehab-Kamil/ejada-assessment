@@ -1,0 +1,24 @@
+In our example project we will simulate an application of Orders where the customer order products and we have a domain that will contain the following structure:
+
+Order{
+date: LocalDate;
+description: String;
+total: BigDecimal;
+items: List<Item>
+}
+
+
+Item {
+  unitPrice: BigDecimal;
+  nrUnits: BigDecimal;
+  product: Product;
+}
+
+
+Product{
+  description:String;
+  price: BigDecimal;
+}
+
+
+Please create an endpoint where you will add a new product and update it.

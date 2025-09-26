@@ -1,8 +1,10 @@
 package com.ejada.assessment.dto;
 
+import jakarta.validation.Valid;
+
 /**
  * <p>
- * Title: AbstractDTO.java
+ * Title: OrderDTO.java
  * </p>
  * <p>
  * Description:
@@ -15,8 +17,7 @@ package com.ejada.assessment.dto;
  * @version 1.0
  * @date 24/09/2025
  */
-public class AbstractDTO {
-
+public class OrderSummaryDTO extends AbstractDTO{
 
 
 }
