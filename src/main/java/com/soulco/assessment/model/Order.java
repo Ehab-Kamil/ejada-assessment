@@ -1,10 +1,12 @@
-package com.ejada.assessment.model;
+package com.soulco.assessment.model;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import lombok.Data;
 
 import java.math.BigDecimal;
+import java.util.Date;
+import java.util.List;
 
 /**
  * <p>
@@ -23,12 +25,14 @@ import java.math.BigDecimal;
  */
 @Data
 @Entity
-public class Item extends AbstractEntity {
+public class Order extends AbstractEntity {
 
+    private Date data;
 
-    private BigDecimal unitPrice;
-    private BigDecimal nrUnits;
+    private String  description;
 
-    @ManyToOne
-    private Product product;
+    private BigDecimal total;
+
+    @OneToMany
+    private List<Item> items;
 }

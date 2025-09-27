@@ -1,6 +1,6 @@
-package com.ejada.assessment.dto;
+package com.soulco.assessment.dto;
 
-import jakarta.validation.constraints.Pattern;
+import jakarta.validation.Valid;
 
 /**
  * <p>
@@ -17,10 +17,7 @@ import jakarta.validation.constraints.Pattern;
  * @version 1.0
  * @date 24/09/2025
  */
-public class OrderDTO extends OrderSummaryDTO{
-
-    @Pattern(regexp = "^(0[1-9]|1[0-2])/(0[1-9]|[12][0-9]|3[01])/([0-9]{4})$")
-    private String date;
+public class OrderSummaryDTO extends AbstractDTO{
 
 
 }

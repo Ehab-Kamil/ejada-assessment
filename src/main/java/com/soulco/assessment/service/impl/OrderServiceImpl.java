@@ -1,9 +1,8 @@
-package com.ejada.assessment.service;
+package com.soulco.assessment.service.impl;
 
-import com.ejada.assessment.dto.OrderDTO;
-import com.ejada.assessment.model.AbstractEntity;
-import com.ejada.assessment.model.Order;
-import com.ejada.assessment.repository.OrderRepository;
+import com.soulco.assessment.model.Order;
+import com.soulco.assessment.dao.OrderRepository;
+import com.soulco.assessment.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

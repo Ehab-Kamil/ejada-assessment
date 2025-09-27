@@ -1,4 +1,4 @@
-package com.ejada.assessment.model;
+package com.soulco.assessment.model;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

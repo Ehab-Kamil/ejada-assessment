@@ -1,7 +1,9 @@
-package com.ejada.assessment.controller;
+package com.soulco.assessment.controller;
 
-import com.ejada.assessment.dto.OrderDTO;
+import com.soulco.assessment.dto.OrderDTO;
+import com.soulco.assessment.manager.OrderManager;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,15 +28,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/products")
 public class OrderController implements AbstractController<OrderDTO> {
 
-    @Override
+    @Autowired
+    private OrderManager orderManager;
+
     @PostMapping
     public void create(@Valid @RequestBody OrderDTO dto) {
-
+        this.orderManager.create(dto);
     }
 
     @Override
     public void update(OrderDTO dto) {
-
+        this.orderManager.update(dto);
     }
 
     @Override

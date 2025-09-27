@@ -1,6 +1,6 @@
-package com.ejada.assessment.repository;
+package com.soulco.assessment.dao;
 
-import com.ejada.assessment.model.Order;
+import com.soulco.assessment.model.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

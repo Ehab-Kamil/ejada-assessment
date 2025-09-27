@@ -1,12 +1,9 @@
-package com.ejada.assessment.model;
+package com.soulco.assessment.model;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
 import lombok.Data;
 
 import java.math.BigDecimal;
-import java.util.Date;
-import java.util.List;
 
 /**
  * <p>
@@ -25,14 +22,11 @@ import java.util.List;
  */
 @Data
 @Entity
-public class Order extends AbstractEntity {
+public class Product extends AbstractEntity {
 
-    private Date data;
 
     private String  description;
 
-    private BigDecimal total;
+    private BigDecimal price;
 
-    @OneToMany
-    private List<Item> items;
 }

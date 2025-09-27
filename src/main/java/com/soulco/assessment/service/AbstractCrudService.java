@@ -1,6 +1,6 @@
-package com.ejada.assessment.service;
+package com.soulco.assessment.service;
 
-import com.ejada.assessment.model.AbstractEntity;
+import com.soulco.assessment.model.AbstractEntity;
 
 /**
  * <p>

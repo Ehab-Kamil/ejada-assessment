@@ -1,10 +1,8 @@
-package com.ejada.assessment.service;
-
-import com.ejada.assessment.model.Order;
+package com.soulco.assessment.dto;
 
 /**
  * <p>
- * Title: OrderService.java
+ * Title: AbstractDTO.java
  * </p>
  * <p>
  * Description:
@@ -17,5 +15,8 @@ import com.ejada.assessment.model.Order;
  * @version 1.0
  * @date 24/09/2025
  */
-public interface OrderService extends AbstractCrudService<Order> {
+public class AbstractDTO {
+
+
+
 }

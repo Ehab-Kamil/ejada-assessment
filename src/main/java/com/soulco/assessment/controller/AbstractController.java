@@ -1,6 +1,6 @@
-package com.ejada.assessment.controller;
+package com.soulco.assessment.controller;
 
-import com.ejada.assessment.dto.AbstractDTO;
+import com.soulco.assessment.dto.AbstractDTO;
 
 /**
  * <p>
